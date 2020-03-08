@@ -1,8 +1,8 @@
-FROM ros:kinetic
+FROM ros:latest
 MAINTAINER Daniel Laguna <labellson@gmail.com>
 
 # install rosbridge server and supervisord
-RUN apt-get update && apt-get install -y ros-kinetic-rosbridge-suite supervisor
+RUN apt-get update && apt-get install -y ros-$ROS_DISTRO-rosbridge-suite supervisor
 RUN mkdir -p /var/log/supervisor
 
 # serup supervisord.conf
